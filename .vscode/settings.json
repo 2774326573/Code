@@ -1,0 +1,84 @@
+{
+    // ------------- vim设置 ---------- 
+// 绑定vim前导键
+"vim.leader": "<space>",
+// 启用easymotion插件
+"vim.easymotion": true,
+// 启用系统粘贴板作为vim寄存器
+"vim.useSystemClipboard": true,
+// 由vim接管ctrl+any的按键，而不是vscode
+"vim.useCtrlKeys": true,
+// 突出显示与当前搜索匹配的所有文本
+"vim.hlsearch": true,
+// 普通模式下的非递归按键绑定
+"vim.normalModeKeyBindingsNonRecursive": [
+    // 在NORMAL模式下按下快捷键执行COMMAND的命令，如按下<C-n>后，取消高亮搜索：
+    {
+        "before": [
+            "<C-n>"
+        ],
+        "commands": [
+            ":nohl"
+        ]
+    },
+    // H 键光标移动到行首
+    {
+        "before": ["H"],
+        "after": ["^"]
+    },
+    // L 键光标移动到行末
+    {
+        "before": ["L"],
+        "after": ["$"]
+    },
+    // focus 到终端上
+    {
+        "before": ["<leader>", "t"],
+        "commands": ["workbench.action.terminal.focus"]
+    },
+    // 向下复制行
+    {
+        "before": ["<leader>", "c"],
+        "commands":["editor.action.copyLinesDownAction"]
+    },
+    // 向下添加光标
+    {
+        "before": ["<leader>", "v"],
+        "commands":["editor.action.insertCursorBelow"]
+    }
+],
+// 插入模式下的非递归按键绑定
+"vim.insertModeKeyBindings": [
+    // 在INSERT模式下使用jj退回到NORMAL模式：
+    {
+        "before": ["j","k"],
+        "after": ["<Esc>"]
+    },
+    {
+        "before": ["<leader>","d"],
+        "commands":["editor.action.copyLinesDownAction"]
+    },
+],
+// 命令模式下的非递归按键绑定
+"vim.commandLineModeKeyBindingsNonRecursive": [],
+// 可视模式下的非递归按键绑定
+"vim.operatorPendingModeKeyBindings": [],
+// 在visual 模式下
+"vim.visualModeKeyBindingsNonRecursive": [
+    // H 键光标移动到行首
+    {
+        "before": ["H"],
+        "after": ["^"]
+    },
+    // L 键光标移动到行末
+    {
+        "before": ["L"],
+        "after": ["$"]
+    },
+],
+// 下面定义的按键将交由vscode进行处理，而不是vscode-vim插件
+"vim.handleKeys": {
+    "<C-a>": false,  // <C-p> 标记等同于 Ctrl - p，意为 同时按 <Ctrl> 及 p
+    "<C-f>": false
+}
+}
