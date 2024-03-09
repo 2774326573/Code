@@ -241,6 +241,12 @@ graph TB
 	B[打开冰箱]	//矩形（表示过程)
 	C{"冰箱"}	//菱形（表示判断/决策)
 	D((链接))	//圆形（表示连接。为避免流程过长或有交叉，可将流程切开，圆形即相当于切口处的连接头（成对出现）
+	E[\平行四边形\]
+	F[/平行四边形/]
+	G[/梯形\]
+	H[\梯形/]
+	I{{六菱形}}
+	J>1]
 ```
 
 效果：
@@ -251,6 +257,12 @@ graph TB
 	B[打开冰箱]
 	C{"冰箱"}
 	D((链接))
+	E[\平行四边形\]
+	F[/平行四边形/]
+	G[/梯形\]
+	H[\梯形/]
+	I{{六菱形}}
+	J>1]
 ```
 
 #### 线段的画法
@@ -305,9 +317,91 @@ graph TB
 	B --> |小| D[换个大冰箱]
 ```
 
+### 标准流程图
+
+```markdown
+```flow
+	st=>start: 开始框
+	op=>operation: 处理框
+	cond=>condition: 判断框(是或否?)
+	subl=>subroutine: 子流程
+	io=>inputoutput: 输入输出框
+	e=>end: 结束框
+	st->op->cond
+	cond(yes)->io->e
+	cond(no)->subl(right)->op
+```
+
+
+
+```flow
+st=>start: 开始框
+op=>operation: 处理框
+cond=>condition: 判断框(是或否?)
+subl=>subroutine: 子流程
+io=>inputoutput: 输入输出框
+e=>end: 结束框
+st->op->cond
+cond(yes)->io->e
+cond(no)->subl(right)->op
+```
+
+### 标准流程图(横向)
+
+```markdown
+```folw
+	st=>start: 开始框
+	op=>operation: 处理框
+	cond=>condition: 判断框(是或否?)
+	subl=>subroutine: 子流程
+	io=>inputoutput: 输入输出框
+	e=>end: 结束框
+	st(right)->op(right)->cond
+	cond(yes)->io->e
+	cond(no)->subl(right)->op
+```
+
+
+
+```flow
+st=>start: 开始框
+op=>operation: 处理框
+cond=>condition: 判断框(是或否?)
+subl=>subroutine: 子流程
+io=>inputoutput: 输入输出框
+e=>end: 结束框
+st(right)->op(right)->cond
+cond(yes)->io->e
+cond(no)->subl(right)->op
+```
+
+
+
 
 
 ### 绘制饼图
+
+语法如下：
+
+```markdown
+pie
+	title Pie chart
+	"Dogs " : 386
+	"cats" : 567
+	"rabbit" : 700
+	"pig" : 365
+	"tiger" : 15
+```
+
+```mermaid
+pie
+	title Pie chart
+	"Dogs " : 386
+	"cats" : 567
+	"rabbit" : 700
+	"pig" : 365
+	"tiger" : 15
+```
 
 
 
@@ -317,13 +411,16 @@ graph TB
 
 <font color=grey>代码：</font>
 
-<table><tr><td bgcolor=yellow>
-sequenceDiagram<br/>
-	Title: 买炸鸡<br/>   
-小明->>炸鸡店店员: 还有炸鸡吗?<br/>
-Note right of Bob: Bob thinks<br/>
-炸鸡店店员-->>小明: 没有，要现炸!<br/>
-<font size=6 color=gree>效果：</font>
+```markdown
+sequenceDiagram
+	Title: 买炸鸡
+小明->>炸鸡店店员: 还有炸鸡吗?
+Note right of Bob: Bob thinks
+炸鸡店店员-->>小明: 没有，要现炸!
+```
+
+
+
 
 ```mermaid
 sequenceDiagram
@@ -498,6 +595,62 @@ sequenceDiagram
 	seller -->> AA :欢迎下次光临
 ```
 
+#### 可选(opt)
+
+在某条件满足时执行消息序列，否则不执行。(相当于单个if语句)
+
+```markdown
+sequenceDiagram
+	participant AA as 小明
+	participant seller as 炸鸡店店员
+	AA ->> seller :买炸鸡
+	opt 全部卖完了
+		seller -->> AA :下次再来
+	end
+```
+
+```mermaid
+sequenceDiagram
+	participant AA as 小明
+	participant seller as 炸鸡店店员
+	AA ->> seller :买炸鸡
+	opt 全部卖完了
+		seller -->> AA :下次再来
+	end
+```
+
+#### 并行(Par)
+
+将信息序列分成多个片段，这些片段并行执行。
+
+```markdown
+sequenceDiagram
+	participant AA as 小明
+	participant seller as 炸鸡店店员
+	AA ->> seller :一只炸鸡+一杯可乐！
+	par 并行执行
+		seller ->> seller :装可乐
+	and
+		seller ->> seller :炸炸鸡
+	end
+	seller -->> AA :您的炸鸡、可乐，好了!
+```
+
+```mermaid
+sequenceDiagram
+	participant AA as 小明
+	participant seller as 炸鸡店店员
+	AA ->> seller :一只炸鸡+一杯可乐！
+	par 并行执行
+		seller ->> seller :装可乐
+	and
+		seller ->> seller :炸炸鸡
+	end
+	seller -->> AA :您的炸鸡、可乐，好了
+```
+
+
+
 
 
 
@@ -505,25 +658,26 @@ sequenceDiagram
 
 ### 绘制甘特图
 
-<font color=grey>代码：</font>
+```markdown
+gantt
+    dateFormat YYYY-MM-DD-HH
+    title 项目开发流程
+    section 项目确定
+    需求分析:a1,2024-03-07,3d
+    可行性报告:after a1,5d
+    概念验证:5d
+section 项目实施
+    概要设计:2024-03-07, 50h
+    详细设计:2024-03-09, 10d
+    编码:2024 0715,10d
+    测试:20240722,5d
+section发布验收
+    发布:90h
+    验收:crit,3d
+```
 
-<table><tr><td bgcolor=yellow>
-    <br/><font size=2>```mermaid</font><br/>
-gantt<br/>
-    dateFormat YYYY-MM-DD-HH<br/>
-    title 项目开发流程<br/>
-    section 项目确定<br/>
-    需求分析:a1,2024-03-07,3d<br/>
-    可行性报告:after a1,5d<br/> 
-    概念验证:5d<br/>
-section 项目实施<br/>
-    概要设计:2024-03-07, 50h<br/>
-    详细设计:2024-03-09, 10d<br/>
-    编码:2024 0715,10d<br/>
-    测试:20240722,5d<br/>
-section发布验收<br/>
-    发布:90h<br/>
-    验收:crit,3d<br/>
+
+
 
 代码分析：
 
@@ -546,20 +700,21 @@ section发布验收<br/>
 
 ```mermaid
 gantt
-	dateFormat 2024-02-29
+    dateFormat YYYY-MM-DD-HH
     title 项目开发流程
+    
     section 项目确定
-    需求分析:active,a1,2024-03-07,3d
-    可行性报告:active,a2,after a1,3d 
-    概念验证:2024-03-15,5d
-section 项目实施
-    概要设计:a3, 50h
-    详细设计:a4,after a3, 4d
-    编码:2024 0715,10d
-    测试:20240722,5d
-section 发布验收
+    需求分析:a1,2d
+    可行性报告:a2,after a1,2d
+    概念验证:a3,after a1,5d
+	section 项目实施
+    概要设计:a4,after a3,4d
+    详细设计:a5,after a4,5d
+    编码:a6,after a5,2d
+    测试:a7,after a5,5d
+	section 发布验收
     发布:90h
-    验收:crit,3d
+    验收:crit,after a7,3d
 ```
 
 ### Html
@@ -630,13 +785,33 @@ Markdown支持原生**<font color=red>`HTML`</font>**语法
 
 \<font(修改字体) face="字体型号" size=30(字体的大小) color=#008000(颜色)>颜色</font>
 
+```markdown
 <font size=30 color=#008000>颜色</font>
+```
+
+<font size=30 color=#008000>颜色</font>
+
+```markdown
+<font size=30 color=red>颜色</font>
+```
 
 <font size=30 color=red>颜色</font>
 
+```markdown
+<font size=30 color=Blue>颜色</font>
+```
+
 <font size=30 color=Blue>颜色</font>
 
+```markdown
 <font size=12 >字体大小</font>
+```
+
+<font size=12 >字体大小</font>
+
+```markdown
+<font size=30 color=gree>颜色</font>
+```
 
 <font size=30 color=gree>颜色</font>
 
@@ -664,13 +839,17 @@ Markdown支持原生**<font color=red>`HTML`</font>**语法
 
 ### 下标
 
-CO\<sub>2\</sub>
+```markdown
+CO<sub>2</sub>
+```
 
 CO<sub>2</sub>
 
 ### 上标
 
-爆米\<sup>TM\</sup>
+```markdown
+爆米<sup>TM</sup>
+```
 
 爆米<sup>TM</sup>
 
@@ -682,7 +861,9 @@ CO<sub>2</sub>
 
 <table><tr><td bgcolor=greey>示例：</table>
 
-\[这是一个链接](https://github.com/2774326573/my-vim.git "https://github.com/2774326573/my-vim.git")
+```markdown
+[这是一个链接](https://github.com/2774326573/my-vim.git "https://github.com/2774326573/my-vim.git")
+```
 
 <table><tr><td bgcolor=grey><font color=white>效果：</font></table>
 
@@ -690,7 +871,9 @@ CO<sub>2</sub>
 
 ## 自动链接
 
-\<https://github.com/2774326573/my-vim.git>
+```markdown
+<https://github.com/2774326573/my-vim.git>
+```
 
 <table><tr><td bgcolor=grey><font color=white>效果：</font></table>
 
@@ -698,12 +881,23 @@ CO<sub>2</sub>
 
 ## 图片
 
-\!\[](E:\文档\p9.jpg)
+```markdown
+![](E:\文档\p9.jpg)
+```
 
 ![中名电子](E:\文档\p9.jpg "中名电子")
 
+[LaTex格式]Markdown或者LaTeX在单个字母上加一横、一点、两点、三角
+
+| 符号              | 语法 |
+| ----------------- | ---- |
+| 字母上三角$\hat{H}$ | \$\hat{H}$ |
+|字母上大三角$\widehat{H}$|\$\widehat{H}$|
+|字母上横$\overline{H}$|\$\overline{H}$|
+|一阶导，字母上一点$\dot{H}$|\$\dot{H}$|
+|二阶导，字母上两点$\ddot{H}$|\$\ddot{H}$|
+|向量，字母上箭头$\vec{H}$|\$\vec{H}$|
+|鄂化符号 等价无穷小$\widetilde{a}$|\$\widetilde{a}$|
 
 [^1]: 这是一个脚注
-
-
 
