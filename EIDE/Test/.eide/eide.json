@@ -30,7 +30,9 @@
       "uploadConfigMap": {},
       "custom_dep": {
         "name": "default",
-        "incList": [],
+        "incList": [
+          "src"
+        ],
         "libList": [],
         "sourceDirList": [],
         "defineList": [
