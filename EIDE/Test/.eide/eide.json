@@ -33,7 +33,9 @@
         "incList": [],
         "libList": [],
         "sourceDirList": [],
-        "defineList": []
+        "defineList": [
+          "GD32F427"
+        ]
       }
     }
   },
