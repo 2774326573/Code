@@ -12,4 +12,6 @@ int main(void) {
     sum = sum + i;
   }
   printf("sum=%d", sum);
+  return 0;
 }
+
