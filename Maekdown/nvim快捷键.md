@@ -30,8 +30,8 @@
 
 |  模式          | 命令           | 快捷键      |
 | -------------  | -------------  | -------        |
-|    c           | <C-n>          | <C-j>          |
-|    c           | <C-p>          | <C-k>          |
+|    c           | <\C-n>          | <\C-j>          |
+|    c           | <\C-p>          | <\C-k>          |
 
 > $跳到行尾不带空格(交换$和g_)
 
@@ -45,9 +45,9 @@
 > 上下滚动游览 <br/> ctrl+u /ctrl+d 移动半屏
 
 |  模式          | 命令           | 快捷键      |
-| -------------  | -------------  | -------        |
 |    n           | 5j             | <\C-j>             |
 |    n           | 5k             | <\C-k>             |
+| -------------  | -------------  | -------        |
 |    v           | 5j             | <\C-j>             |
 |    v           | 5k             | <\C-k>             |
 
@@ -181,7 +181,7 @@
 </tr>
 <tr>
 <td>:foldclose\<\CR> </td>
-<td>zz </td>
+<td>Z </td>
 </tr>
 <tr>
 <th rowspan="2">markdown</th>
@@ -473,7 +473,7 @@
 <td>"n" <\S-F10></td>
 </tr>
 <tr>
-<th rowspan="12">nvim-cmp自动补全</th>
+<th rowspan="14">nvim-cmp自动补全</th>
 <th>上一个</th>
 <th></th>
 </tr>
@@ -489,9 +489,9 @@
 <td>=cmp.mapping.select_next_item()</td>
 <td><\C-j></td>
 </tr>
-<tr>
 <td>出现补全</td>
 <td></td>
+<tr>
 </tr>
 <tr>
 <td>=cmp.mapping(cmp.mapping.complete(),{"i","c"})</td>
@@ -516,5 +516,87 @@
 <tr>
 <td>=cmp.mapping(cmp.mapping.scroll_docs(4),{"i","c"})</td>
 <td><\C-d></td>
+</tr>
+<tr>
+<td>=cmp.mapping(function(fallback))<br/>判断Tab是否是snippets代码片段</td>
+<td><\Tab></td>
+</tr>
+<tr>
+<td>=cmp.mapping(function())<br/>判断Tab是否是snippets代码片段</td>
+<td><\S-Tab></td>
+</tr>
+<tr>
+<th rowspan="4">toggler</th>
+<th>toggleA</th>
+<th>"n"/"t" tt</th>
+</tr>
+<tr>
+<td>toggleB</td>
+<td>"n"/"t" tb</td>
+</tr>
+<tr>
+<td>toggleC</td>
+<td>"n"/"t" tc</td>
+</tr>
+<tr>
+<td>toggleG</td>
+<td>"n"/"t" tg</td>
+</tr>
+<tr>
+<th rowspan="15">gitsigns查看更改记录</th>
+<th>gs.next_hunk()</th>
+<th>"n" <\leader>gj</th>
+</tr>
+<tr>
+<td>gs.prev_hunk</td>
+<td>"n" <\leader>gk</td>
+</tr>
+<tr>
+<td>:Gitsigns stage_hunk<\CR></td>
+<td>"n"/"v" <\leader>gs</td>
+</tr>
+<tr>
+<td>gs.stage_buffer</td>
+<td>"n" <leader>gS</td>
+</tr>
+<tr>
+<td>gs.undo_stage_hunk</td>
+<td>"n" <leader>gu</td>
+</tr>
+<tr>
+<td>:Gitsigns reset_hunk<\CR></td>
+<td>"n"/"v" <\leader>gr</td>
+</tr>
+<tr>
+<td>gs.stage_buffer</td>
+<td>"n" <leader>gR</td>
+</tr>
+<tr>
+<td>gs.undo_stage_hunk</td>
+<td>"n" <leader>gp</td>
+</tr>
+<td>gs.blame_line({full=true})</td>
+<tr>
+<td>"n" <leader>gb</td>
+</tr>
+<tr>
+<td>gs.diffthis</td>
+<td>"n" <leader>gd</td>
+</tr>
+<tr>
+<td>gs.diffthis(~)</td>
+<td>"n" <leader>gD</td>
+</tr>
+<tr>
+<td>gs.toggle_deleted</td>
+<td>"n" <leader>gtd</td>
+</tr>
+<tr>
+<td>gs.toggle_current_line_blame</td>
+<td>"n" <leader>gtb</td>
+</tr>
+<tr>
+<td>:<\C-U>Gitsigns_on_attach<\CR></td>
+<td>"o"/"x" ig</td>
 </tr>
 </table>
