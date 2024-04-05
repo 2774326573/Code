@@ -576,8 +576,8 @@
 <td>"n" <leader>gp</td>
 </tr>
 <td>gs.blame_line({full=true})</td>
+<td>"n" <\leader>gb</td>
 <tr>
-<td>"n" <leader>gb</td>
 </tr>
 <tr>
 <td>gs.diffthis</td>
