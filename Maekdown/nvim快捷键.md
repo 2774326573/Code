@@ -372,7 +372,47 @@
 <th>"n" <\leader>s</th>
 </tr>
 <tr>
-<td>:CellularAutomaton game_of_life<\CR></td>
-<td>"n" cag</td>
+<td><\cmd>Lspsaga rename<\CR></td>
+<td>"n" cm</td>
+</tr>
+<tr>
+<td><\cmd>Lspsaga code_action<\CR></td>
+<td>"n" <\leader>ca</td>
+</tr>
+<tr>
+<td><\cmd>Lspsaga goto_definition<\CR></td>
+<td>"n" gd</td>
+</tr>
+<tr>
+<td><\cmd>Lspsaga peek_definition<\CR></td>
+<td>"n" gD</td>
+</tr>
+<td><\cmd>Lspsaga peek_definition<\CR></td>
+<tr>
+<td>"n" gt</td>
+</tr>
+<tr>
+<td><\cmd>Lspsaga hover_doc<\CR></td>
+<td>"n" gh</td>
+</tr>
+<tr>
+<td><\cmd>Lspsaga lsp_finder<\CR></td>
+<td>"n" gr</td>
+</tr>
+<tr>
+<td><\cmd>Lspsaga show_line_diagnostics<\CR></td>
+<td>"n" gp</td>
+</tr>
+<tr>
+<td><\cmd>Lspsaga diagnostic_jump_next<\CR></td>
+<td>"n" gj</td>
+</tr>
+<tr>
+<td><\cmd>Lspsaga diagnostic_jump_prev<\CR></td>
+<td>"n" gk</td>
+</tr>
+<tr>
+<td><\cmd>Lspsaga outline<\CR></td>
+<td>"n" <\F8></td>
 </tr>
 </table>
