@@ -557,11 +557,11 @@
 </tr>
 <tr>
 <td>gs.stage_buffer</td>
-<td>"n" <leader>gS</td>
+<td>"n" <\leader>gS</td>
 </tr>
 <tr>
 <td>gs.undo_stage_hunk</td>
-<td>"n" <leader>gu</td>
+<td>"n" <\leader>gu</td>
 </tr>
 <tr>
 <td>:Gitsigns reset_hunk<\CR></td>
@@ -569,11 +569,11 @@
 </tr>
 <tr>
 <td>gs.stage_buffer</td>
-<td>"n" <leader>gR</td>
+<td>"n" <\leader>gR</td>
 </tr>
-<tr>
 <td>gs.undo_stage_hunk</td>
-<td>"n" <leader>gp</td>
+<tr>
+<td>"n" <\leader>gp</td>
 </tr>
 <td>gs.blame_line({full=true})</td>
 <td>"n" <\leader>gb</td>
@@ -581,19 +581,19 @@
 </tr>
 <tr>
 <td>gs.diffthis</td>
-<td>"n" <leader>gd</td>
+<td>"n" <\leader>gd</td>
 </tr>
 <tr>
 <td>gs.diffthis(~)</td>
-<td>"n" <leader>gD</td>
+<td>"n" <\leader>gD</td>
 </tr>
 <tr>
 <td>gs.toggle_deleted</td>
-<td>"n" <leader>gtd</td>
+<td>"n" <\leader>gtd</td>
 </tr>
 <tr>
 <td>gs.toggle_current_line_blame</td>
-<td>"n" <leader>gtb</td>
+<td>"n" <\leader>gtb</td>
 </tr>
 <tr>
 <td>:<\C-U>Gitsigns_on_attach<\CR></td>
