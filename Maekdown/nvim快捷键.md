@@ -359,7 +359,7 @@
 </tr>
 <tr>
 <th rowspan="2">细胞cam 游戏cha</th>
-<th>:CellularAutomaton make_it_rain<\CR>></th>
+<th>:CellularAutomaton make_it_rain<\CR></th>
 <th>"n" cam</th>
 </tr>
 <tr>
@@ -367,8 +367,8 @@
 <td>"n" cag</td>
 </tr>
 <tr>
-<th rowspan="10">lsp 回调函数快捷键设置</th>
-<th><\cmd>lua vim.lsp.buf.format{async=ture}<\CR>></th>
+<th rowspan="13">lsp 回调函数快捷键设置</th>
+<th><\cmd>lua vim.lsp.buf.format{async=ture}<\CR></th>
 <th>"n" <\leader>s</th>
 </tr>
 <tr>
@@ -388,8 +388,8 @@
 <td>"n" gD</td>
 </tr>
 <td><\cmd>Lspsaga peek_definition<\CR></td>
-<tr>
 <td>"n" gt</td>
+<tr>
 </tr>
 <tr>
 <td><\cmd>Lspsaga hover_doc<\CR></td>
@@ -414,5 +414,107 @@
 <tr>
 <td><\cmd>Lspsaga outline<\CR></td>
 <td>"n" <\F8></td>
+</tr>
+<tr>
+<th rowspan="14">nvim-dap</th>
+<th>结束</th>
+<th></th>
+</tr>
+<tr>
+<td>:lua require'dap'.terminate<\CR><br/>:lua require'dap'.close<\CR><br/>:lua require'dap.repl'.close<\CR><br/>:lua require'dapui'.close<\CR><br/>:lua require('dap').clear_breakpoints()<\CR><br/><\C-w>0<\CR></td>
+<td>"n" <\S-F5></td>
+</tr>
+<tr>
+<td>开始/继续</td>
+<td></td>
+</tr>
+<tr>
+<td>:lua require'dap'.continue()<\CR></td>
+<td>"n" <\C-F5></td>
+</tr>
+<tr>
+<td>设置断点</td>
+<td></td>
+</tr>
+<tr>
+<td>:lua require'dap'.toggle_breakpoint()<\CR></td>
+<td>"n" <\F6></td>
+</tr>
+<tr>
+<td>:lua require'dap'.clear_breakpoints()<\CR></td>
+<td>"n" <\S-F6></td>
+</tr>
+<tr>
+<td>stepOver,stepOut,stepInto</td>
+<td></td>
+</tr>
+<tr>
+<td>:lua require'dap'.step_over()<\CR></td>
+<td>"n" <\F12></td>
+</tr>
+<tr>
+<td>:lua require'dap'.step_out()<\CR></td>
+<td>"n" <\S-F7></td>
+</tr>
+<tr>
+<td>:lua require'dap'.step_into()<\CR></td>
+<td>"n" <\S-F12></td>
+</tr>
+<tr>
+<td>弹窗</td>
+<td></td>
+</tr>
+<tr>
+<td>:lua require'dap'.restart()<\CR></td>
+<td>"n" <\F10></td>
+</tr>
+<tr>
+<td>:lua require'dap'.terminate()<\CR></td>
+<td>"n" <\S-F10></td>
+</tr>
+<tr>
+<th rowspan="13">nvim-cmp自动补全</th>
+<th>上一个</th>
+<th></th>
+</tr>
+<tr>
+<td>=cmp.mapping.select_prev_item()</td>
+<td><\C-k></td>
+</tr>
+<tr>
+<td>下一个</td>
+<td></td>
+</tr>
+<tr>
+<td>=cmp.mapping.select_next_item()</td>
+<td><\C-j></td>
+</tr>
+<tr>
+<td>出现补全</td>
+<td></td>
+</tr>
+<tr>
+<td>=cmp.mapping(cmp.mapping.complete(),{"i","c"})</td>
+<td><\A-.></td>
+</tr>
+<tr>
+<td>确认</td>
+<td></td>
+</tr>
+<tr>
+<td>=cmp.mapping.confirm({<br/>select=true,<br/>behavior=cmp.ConfirmBehavior.Replace})</td>
+<td><\CR></td>
+</tr>
+<tr>
+<td>如果窗口内容太多，可以滚动</td>
+<td></td>
+</tr>
+<tr>
+<td>=cmp.mapping(cmp.mapping.scroll_docs(-4),{"i","c"})</td>
+<td><\C-u></td>
+</tr>
+<tr>
+<td>=cmp.mapping(cmp.mapping.scroll_docs(4),{"i","c"})</td>
+<td><\C-d></td>
 </tr>
 </table>
