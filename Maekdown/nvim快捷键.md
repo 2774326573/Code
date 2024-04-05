@@ -473,7 +473,7 @@
 <td>"n" <\S-F10></td>
 </tr>
 <tr>
-<th rowspan="13">nvim-cmp自动补全</th>
+<th rowspan="10">nvim-cmp自动补全</th>
 <th>上一个</th>
 <th></th>
 </tr>
@@ -503,8 +503,8 @@
 </tr>
 <tr>
 <td>=cmp.mapping.confirm({<br/>select=true,<br/>behavior=cmp.ConfirmBehavior.Replace})</td>
-<td><\CR></td>
 </tr>
+<td><\CR></td>
 <tr>
 <td>如果窗口内容太多，可以滚动</td>
 <td></td>
