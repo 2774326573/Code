@@ -571,13 +571,13 @@
 <td>gs.stage_buffer</td>
 <td>"n" <\leader>gR</td>
 </tr>
-<td>gs.undo_stage_hunk</td>
 <tr>
+<td>gs.undo_stage_hunk</td>
 <td>"n" <\leader>gp</td>
 </tr>
+<tr>
 <td>gs.blame_line({full=true})</td>
 <td>"n" <\leader>gb</td>
-<tr>
 </tr>
 <tr>
 <td>gs.diffthis</td>
