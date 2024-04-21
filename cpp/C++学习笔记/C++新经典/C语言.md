@@ -446,12 +446,12 @@ char + int = int
 <th> < float </th>
 </tr>
 <tr>
-<td>^ </td>
-<td>long </td>
+<td>^ long</td>
+<td> </td>
 </tr>
 <tr>
-<td>^ </td>
-<td>unsigned </td>
+<td>^ unsigned </td>
+<td> </td>
 </tr>
 <tr>
 <th rowspan="3"> ^ 低 </th>
