@@ -2,7 +2,7 @@
     "configurations": [
         {
             "name": "C51",
-            "includePath": [			// 你的工程中存放 include的文件夹路径
+            "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/App",
                 "${workspaceFolder}/Libraries/Device/Include",
@@ -11,9 +11,9 @@
             "defines": [
                 "_DEBUG",
                 "UNICODE",
-                "_UNICODE",
+                "_UNICODE"
             ],
-            "compilerPath": "C:\\Program Files\\SDCC\\bin\\sdcc.exe",	// sdcc bin路径
+            "compilerPath": "/usr/bin/clang++",
             "cStandard": "gnu18",
             "cppStandard": "gnu++14",
             "intelliSenseMode": "gcc-x64"
